@@ -7,12 +7,23 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/txt_reshu_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:text="Reschedule appoinment"
+        android:textColor="#0D4668"/>
+
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circular_img"
         android:layout_width="130dp"
         android:layout_height="150dp"
         android:layout_margin="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/txt_reshu_app"
         android:padding="10dp"
         android:src="@drawable/doctor" />
 
@@ -20,15 +31,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="23dp"
         android:layout_toRightOf="@+id/circular_img"
+        android:layout_below="@+id/txt_reshu_app"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Dr.Hesham Hesagi"
-            android:textColor="@color/black"
+            android:textColor="#0D4668"
             android:textSize="25dp"
             android:textStyle="bold" />
 
@@ -44,72 +56,79 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="Fees:EGP 500"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/place_Hos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/place_Hos"
-android:layout_marginTop="5dp"
-        android:layout_below="@id/circular_img">
+        android:layout_below="@id/circular_img"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/icon" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Cairo Center"
             android:layout_marginStart="20dp"
-            android:textSize="20sp"
-            android:textColor="#0D4668"/>
+            android:text="New Cairo Center"
+            android:textColor="#0D4668"
+            android:textSize="20sp" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow"
-            android:layout_marginStart="5dp"/>
+            android:layout_marginStart="5dp"
+            android:src="@drawable/arrow" />
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/add_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/place_Hos"
         android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:text="15 Shehab Street Al Aji NarCity,Cairo,Egypt"/>
+        android:text="15 Shehab Street Al Aji NarCity,Cairo,Egypt"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/text_mon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mar 2022"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#0D4668"
         android:layout_below="@id/add_txt"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"
+        android:text="Mar 2022"
+        android:textColor="#0D4668"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_mon"
+        android:layout_margin="5dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="1"
-        android:layout_margin="5dp" />
+        app:spanCount="1" />
+
     <TextView
         android:id="@+id/text_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Available time slots"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="#0D4668"
         android:layout_below="@id/recycler_date"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="Available time slots"
+        android:textColor="#0D4668"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_time"
@@ -119,31 +138,31 @@ android:layout_marginTop="5dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
-        tools:listitem="@layout/item_slot"/>
+        tools:listitem="@layout/item_slot" />
 
     <Button
+        android:id="@+id/btn_reshu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/recycler_time"
-        android:id="@+id/btn_reshu"
-        android:text="Confirm resheduling"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textAllCaps="false"
         android:layout_marginTop="5dp"
-        android:backgroundTint="#0D4668"/>
+        android:backgroundTint="#0D4668"
+        android:text="Confirm resheduling"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_reshu"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/white"
         android:text="Back"
+        android:textAllCaps="false"
         android:textColor="#1D31C1"
         android:textSize="20sp"
-        android:layout_marginTop="5dp"
-        android:textStyle="bold"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/white"/>
-
+        android:textStyle="bold" />
 
 
 </RelativeLayout>
