@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+getSupportActionBar().hide();
         RecyclerView recyclerView_date = findViewById(R.id.recycler_date);
         GridLayoutManager gridLayoutManager=new GridLayoutManager(this,1,GridLayoutManager.HORIZONTAL,false);
         recyclerView_date.setLayoutManager(gridLayoutManager);
