@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/txt_reshu_app"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        android:text="Reschedule appointment"
+        android:textColor="#0B3B61"
         android:textSize="28sp"
-        android:text="Reschedule appoinment"
-        android:textColor="#0D4668"/>
+        android:textStyle="bold" />
 
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circular_img"
         android:layout_width="130dp"
         android:layout_height="150dp"
-        android:layout_margin="10dp"
         android:layout_marginTop="5dp"
         android:layout_below="@id/txt_reshu_app"
-        android:padding="10dp"
         android:src="@drawable/doctor" />
 
 
@@ -39,15 +40,16 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dr.Hesham Hesagi"
-            android:textColor="#0D4668"
-            android:textSize="25dp"
+            android:text="Dr.Hesham Hegazi"
+            android:textColor="#0B3B61"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:textColor="#6B889F"
             android:text="cardialogist"
             android:textSize="20dp" />
 
@@ -55,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:textColor="#6B889F"
             android:text="Fees:EGP 500"
             android:textSize="20dp" />
 
@@ -78,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="New Cairo Center"
-            android:textColor="#0D4668"
+            android:textColor="#1E63C7"
             android:textSize="20sp" />
 
         <ImageView
@@ -96,7 +99,7 @@
         android:layout_below="@id/place_Hos"
         android:layout_marginTop="5dp"
         android:text="15 Shehab Street Al Aji NarCity,Cairo,Egypt"
-        android:textStyle="bold" />
+        android:textColor="#708CA3" />
 
     <TextView
         android:id="@+id/text_mon"
@@ -105,7 +108,7 @@
         android:layout_below="@id/add_txt"
         android:layout_marginTop="10dp"
         android:text="Mar 2022"
-        android:textColor="#0D4668"
+        android:textColor="#436986"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -114,8 +117,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_mon"
-        android:layout_margin="5dp"
-        android:layout_marginTop="10dp"
+        android:padding="4dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="1" />
 
@@ -126,7 +133,7 @@
         android:layout_below="@id/recycler_date"
         android:layout_marginTop="10dp"
         android:text="Available time slots"
-        android:textColor="#0D4668"
+        android:textColor="#174469"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -135,6 +142,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_time"
+        android:orientation="horizontal"
+        android:padding="4dp"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
@@ -146,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/recycler_time"
         android:layout_marginTop="5dp"
-        android:backgroundTint="#0D4668"
+        android:backgroundTint="#0A54C3"
         android:text="Confirm resheduling"
         android:textAllCaps="false"
         android:textSize="20sp"
@@ -160,9 +169,10 @@
         android:backgroundTint="@color/white"
         android:text="Back"
         android:textAllCaps="false"
-        android:textColor="#1D31C1"
+        android:textColor="#345C7A"
         android:textSize="20sp"
         android:textStyle="bold" />
 
 
 </RelativeLayout>
+</ScrollView>
