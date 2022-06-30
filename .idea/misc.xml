@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/drawable/btn_back.xml" value="0.116" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/drawable/cardbg.xml" value="0.116" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/drawable/rectangle_fill.xml" value="0.116" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/drawable/rectangle_outline.xml" value="0.116" />
+        <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/drawable/selector_bg.xml" value="0.116" />
+        <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/drawable/selector_text.xml" value="0.116" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/layout/bottom_sheet.xml" value="0.264" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/layout/header_2.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/layout/item_date.xml" value="0.536" />
         <entry key="..\:/Users/Pradeep/AndroidStudioProjects/schedule/app/src/main/res/layout/item_header.xml" value="0.536" />

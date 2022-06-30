@@ -1,11 +1,12 @@
 package com.example.schedule;
+
 import java.util.List;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
 public class Model {
-
 
 
     @SerializedName("record")
@@ -30,8 +31,6 @@ public class Model {
     public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
     }
-
-
 
 
 }

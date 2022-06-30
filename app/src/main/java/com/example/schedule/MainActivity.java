@@ -6,7 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,37 +28,50 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-getSupportActionBar().hide();
+        ScrollView llBottomSheet = findViewById(R.id.bottom_sheet);
+
+        BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(llBottomSheet);
+
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+
+        // bottomSheetBehavior.setPeekHeight(1000);
+
+        bottomSheetBehavior.setHideable(false);
+
+        ProgressBar progressBar = findViewById(R.id.progress_bar1);
+        getSupportActionBar().hide();
         RecyclerView recyclerView_date = findViewById(R.id.recycler_date);
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,1,GridLayoutManager.HORIZONTAL,false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1, GridLayoutManager.HORIZONTAL, false);
         recyclerView_date.setLayoutManager(gridLayoutManager);
         DayAdapter adapter = new DayAdapter(getDay());
         recyclerView_date.setAdapter(adapter);
         RecyclerView recyclerView = findViewById(R.id.recycler_time);
-        Api_Interface api_interface=RetrofitInstance.getRetrofitInstance().create(Api_Interface.class);
-        Call<Model>call=api_interface.getAllData();
+        Api_Interface api_interface = RetrofitInstance.getRetrofitInstance().create(Api_Interface.class);
+        Call<Model> call = api_interface.getAllData();
         call.enqueue(new Callback<Model>() {
             @Override
-            public  void onResponse(Call<Model> call, Response<Model> response) {
-             //  Log.d("TAG", "onResponse: "+response.body().getRecord().getData().getSlot().get(0).getSlotsList());
-
-                GridLayoutManager gridLayoutManager=new GridLayoutManager(getApplicationContext(),3,GridLayoutManager.HORIZONTAL,false);
+            public void onResponse(Call<Model> call, Response<Model> response) {
+                //  Log.d("TAG", "onResponse: "+response.body().getRecord().getData().getSlot().get(0).getSlotsList());
+                progressBar.setVisibility(View.GONE);
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 3, GridLayoutManager.HORIZONTAL, false);
                 recyclerView.setLayoutManager(gridLayoutManager);
-               TimeAdapter adapter = new TimeAdapter(response.body().getRecord().getData().getSlot().get(0).getSlotsList(),this);
+                TimeAdapter adapter = new TimeAdapter(response.body().getRecord().getData().getSlot().get(0).getSlotsList(), this);
                 recyclerView.setAdapter(adapter);
+
 
             }
 
             @Override
             public void onFailure(Call<Model> call, Throwable t) {
-                Log.d("TAG", "onFailure: "+t.getLocalizedMessage());
-
+                Log.d("TAG", "onFailure: " + t.getLocalizedMessage());
+                progressBar.setVisibility(View.GONE);
             }
         });
 
 
     }
-    public ArrayList<Day> getDay(){
+
+    public ArrayList<Day> getDay() {
         ArrayList<Day> list = new ArrayList<>();
 
 
@@ -73,10 +92,10 @@ getSupportActionBar().hide();
         Day day15 = new Day("SUN", 15);
         Day day16 = new Day("MON", 16);
         Day day17 = new Day("TUE", 17);
-        Day day18= new Day("WED", 18);
+        Day day18 = new Day("WED", 18);
         Day day19 = new Day("THU", 19);
-        Day day20= new Day("FRI", 20);
-        Day day21= new Day("SAT", 21);
+        Day day20 = new Day("FRI", 20);
+        Day day21 = new Day("SAT", 21);
         list.add(day1);
         list.add(day2);
         list.add(day3);

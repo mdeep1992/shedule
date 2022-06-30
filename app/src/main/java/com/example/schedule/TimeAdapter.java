@@ -16,9 +16,10 @@ import retrofit2.Callback;
 public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.Myviewholder> {
     private List<String> mData;
     private Context context;
+    private int selectedItem = 0;
 
     public TimeAdapter(List<String> slotsList, Callback<Model> modelCallback) {
-mData=slotsList;
+        mData = slotsList;
 
     }
 
@@ -35,7 +36,7 @@ mData=slotsList;
     public void onBindViewHolder(@NonNull Myviewholder holder, int position) {
         String slot = mData.get(position);
         holder.txt_time.setText(slot);
-
+        holder.viewRoot.setSelected(selectedItem == position);
     }
 
     @Override
@@ -46,9 +47,25 @@ mData=slotsList;
 
     public class Myviewholder extends RecyclerView.ViewHolder {
         TextView txt_time;
+        View viewRoot;
+
         public Myviewholder(@NonNull View itemView) {
             super(itemView);
-            txt_time=itemView.findViewById(R.id.text_header);
+            txt_time = itemView.findViewById(R.id.text_header);
+            viewRoot = itemView.findViewById(R.id.view_root);
+            viewRoot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    changeSelection(getAdapterPosition());
+                }
+            });
         }
+    }
+
+    public void changeSelection(int pos) {
+        int lastSelectedItem = selectedItem;
+        selectedItem = pos;
+        notifyItemChanged(lastSelectedItem);
+        notifyItemChanged(selectedItem);
     }
 }
