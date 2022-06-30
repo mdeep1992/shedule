@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(llBottomSheet);
 
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
         // bottomSheetBehavior.setPeekHeight(1000);
 

@@ -5,8 +5,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/stethoscope"
     tools:context=".MainActivity">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WELCOME"
+        android:textColor="#0B3B61"
+        android:layout_gravity="center_vertical"
+        android:textSize="40sp"
+        android:layout_marginStart="20dp"
+        android:textStyle="italic" />
 
     <include layout="@layout/bottom_sheet" />
 
